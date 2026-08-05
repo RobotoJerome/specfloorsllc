@@ -52,7 +52,13 @@ body{
   -webkit-font-smoothing:antialiased;
   overflow-x:hidden;
 }
-img,picture,svg{max-width:100%;display:block}
+picture,svg{max-width:100%;display:block}
+/* height:auto is required, not optional. The width/height attributes on <img>
+   are presentational hints that set CSS width AND height. Overriding only the
+   width (e.g. width:100%) leaves the height hint applied, which stretches the
+   image vertically. Rules that set an explicit height (.shot img, .hero__img img)
+   are more specific and still win. */
+img{max-width:100%;height:auto;display:block}
 h1,h2,h3,h4{margin:0 0 .5em;color:var(--ink);line-height:1.12;letter-spacing:-.01em}
 h1{font-family:var(--display);font-size:clamp(2.3rem,5vw,3.85rem);letter-spacing:-.02em}
 h2{font-family:var(--display);font-size:clamp(1.85rem,3.7vw,2.9rem);letter-spacing:-.015em}
@@ -206,18 +212,23 @@ button{font:inherit;color:inherit}
 .btn--phone .btn__label{font-size:1.12rem;font-family:var(--display);letter-spacing:-.01em}
 
 /* hamburger */
+/* Flex with an explicit gap, not grid: grid stretches its auto rows to fill the
+   button, which spread the bars ~13px apart and made the close "X" fail to meet
+   in the middle. Flex + gap makes the spacing exact and predictable. */
 .navtoggle{
   display:none;width:46px;height:44px;border:2px solid var(--line);background:#fff;
-  border-radius:11px;cursor:pointer;padding:0;place-items:center;
+  border-radius:11px;cursor:pointer;padding:0;
+  flex-direction:column;align-items:center;justify-content:center;gap:5px;
 }
 .navtoggle span{
   display:block;width:20px;height:2.5px;background:var(--navy-800);border-radius:2px;
-  margin:3.5px auto;transition:transform .25s ease,opacity .2s ease;
+  margin:0;transition:transform .25s ease,opacity .2s ease;
 }
-/* bars are 2.5px tall with 3.5px margins -> 9.5px between centers */
-.navtoggle[aria-expanded="true"] span:nth-child(1){transform:translateY(9.5px) rotate(45deg)}
+/* 2.5px bar + 5px gap = 7.5px between bar centers, so that's the exact
+   distance each outer bar travels to converge into a centered X. */
+.navtoggle[aria-expanded="true"] span:nth-child(1){transform:translateY(7.5px) rotate(45deg)}
 .navtoggle[aria-expanded="true"] span:nth-child(2){opacity:0}
-.navtoggle[aria-expanded="true"] span:nth-child(3){transform:translateY(-9.5px) rotate(-45deg)}
+.navtoggle[aria-expanded="true"] span:nth-child(3){transform:translateY(-7.5px) rotate(-45deg)}
 
 /* ============================================================
    Hero
@@ -772,10 +783,10 @@ button{font:inherit;color:inherit}
     max-height:calc(100vh - var(--head-h));overflow-y:auto;
   }
   .nav.is-open{transform:translateY(0)}
-  .nav a{padding:15px 0;border-bottom:1px solid var(--line);font-size:1.05rem}
+  .nav a{padding:12px 0;border-bottom:1px solid var(--line);font-size:1.02rem}
   .nav a:last-child{border-bottom:0}
   .nav a::after{display:none}
-  .navtoggle{display:grid}
+  .navtoggle{display:flex}
   .header__cta{margin-left:auto}
   .btn--phone .btn__label{font-size:1rem}
   .btn--phone small{display:none}

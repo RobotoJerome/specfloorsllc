@@ -32,8 +32,9 @@ so what's in the repo is exactly what gets served.
 2. Under "Build and deployment", set **Source** to `Deploy from a branch`.
 3. Set the branch to **`main`** and the folder to **`/ (root)`**. Save.
 
-The site goes live at **https://robotojerome.github.io/specfloorsllc/** within a minute
-or two. Every `git push` to `main` republishes it automatically.
+The site is live at **https://specfloorsllc.com** (custom domain, HTTPS enforced).
+`www.specfloorsllc.com` redirects to it automatically. Every `git push` to `main`
+republishes within a minute or two.
 
 ### Updating the site later
 
