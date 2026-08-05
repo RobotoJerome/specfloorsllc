@@ -1,0 +1,15 @@
+# Original iPhone photos.
+# Browsers cannot display HEIC — the web-ready WebP/JPEG conversions in
+# images/ are what the site actually serves. Keeping the ~25 MB of originals
+# out of the repo keeps clones fast and avoids publishing unused files.
+# Keep them backed up somewhere; they're the source for re-exporting photos.
+*.heic
+*.HEIC
+
+# OS / editor cruft
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+.DS_Store
+.claude/
+.vscode/
