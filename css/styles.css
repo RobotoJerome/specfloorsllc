@@ -493,7 +493,10 @@ button{font:inherit;color:inherit}
    ============================================================ */
 .about__grid{
   display:grid;grid-template-columns:minmax(0,.82fr) minmax(0,1.18fr);
-  gap:64px;align-items:center;
+  gap:64px;
+  /* top-aligned, not centered: the photo should start level with the
+     "Meet Nick" kicker rather than floating in the middle of the column */
+  align-items:start;
 }
 .about__media{position:relative}
 .about__media img{
