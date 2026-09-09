@@ -111,6 +111,48 @@ Update all of these so search engines and link previews stay correct:
 4. `robots.txt` — the `Sitemap:` line
 5. `sitemap.xml` — the `<loc>` value
 
+
+---
+
+## Google reviews
+
+The site links to the Google Business Profile in three places, all using the same
+permanent **Place ID**, `ChIJO4Z94ctuo0MRbY37IiBksy0`:
+
+| Where | Link |
+| --- | --- |
+| "Write a Google Review" band above the footer, and the footer link | `https://search.google.com/local/writereview?placeid=<ID>` |
+| "Read All Reviews on Google" under the review cards | `https://www.google.com/maps/place/?q=place_id:<ID>` |
+
+That write-review link is also the one to text customers after a job. Don't replace it
+with a URL copied out of the browser address bar after searching Google — those carry
+session tokens (`sca_esv`, `gs_lp`) and go stale. The Place ID only changes if the
+Business Profile is deleted and recreated.
+
+**Adding a new review** — copy an existing `<figure class="review">` block in the
+`#reviews` section and fill in the quote, name, and the "26 reviews" / "Local Guide"
+line under the name. Transcribe the review **verbatim**, typos included; don't tidy up a
+customer's wording.
+
+The grid is three columns wide and the longest review carries an extra
+`review--feature` class that makes it span two of them. That is what keeps five cards
+filling two full rows. If the number of reviews changes, move or drop that class so the
+last row doesn't end up with an awkward gap:
+
+- 4 or 7 reviews — no feature card
+- 5 or 8 reviews — one feature card
+- 6 or 9 reviews — no feature card
+
+**Why there is no star-rating markup** — Google's structured-data guidelines forbid a
+site from marking up reviews collected on another platform as its own `Review` or
+`AggregateRating`. It earns no stars in search results and risks a manual penalty, so
+the cards are deliberately plain HTML.
+
+**Why the reviews aren't pulled in automatically** — Google's Places API returns at most
+five reviews and picks which five itself, and it needs an API key plus a billing
+account. Hand-written cards let Nick choose which reviews appear, cost nothing, and add
+no third-party script to the page.
+
 ---
 
 ## Content notes

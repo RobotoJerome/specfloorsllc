@@ -69,6 +69,14 @@
 
 <a class="skip-link" href="#main">Skip to main content</a>
 
+<!-- Star glyph, defined once and referenced with <use> by every review card.
+     Inlining the path 25 times would work but bloats the document for no gain. -->
+<svg class="svgdefs" width="0" height="0" aria-hidden="true" focusable="false">
+  <symbol id="i-star" viewBox="0 0 20 20">
+    <path d="m10 15.3-5.2 3.1 1.4-5.9L1.6 8.6l6-.5L10 2.6l2.4 5.5 6 .5-4.6 3.9 1.4 5.9z"/>
+  </symbol>
+</svg>
+
 <!-- ============ TOP BAR ============ -->
 <div class="topbar">
   <div class="wrap topbar__inner">
@@ -100,6 +108,7 @@
       <a href="#services">Services</a>
       <a href="#work">Our Work</a>
       <a href="#about">About Nick</a>
+      <a href="#reviews">Reviews</a>
       <a href="#area">Service Area</a>
       <a href="#estimate">Contact</a>
     </nav>
@@ -451,6 +460,128 @@
   </div>
 </section>
 
+<!-- ============ REVIEWS ============ -->
+<!-- Reviews are transcribed verbatim from the Google Business Profile, wording
+     and punctuation untouched. Do not paraphrase or tidy them up. To add a new
+     one, copy an existing .review block; make the longest/best one .review--feature
+     so it spans two columns and the grid stays full.
+
+     Deliberately NOT marked up as schema.org Review/AggregateRating: Google's
+     structured-data guidelines forbid a site marking up reviews collected on
+     another platform as its own. It earns no rich result and risks a penalty. -->
+<section class="section section--tint reviews" id="reviews">
+  <div class="wrap">
+    <header class="sechead">
+      <p class="kicker">Straight From Customers</p>
+      <h2>Five stars, every time.</h2>
+      <p class="sechead__sub">
+        Real reviews from Nick's Google Business Profile — homeowners across
+        McHenry County who had Spec Floors do the work.
+      </p>
+    </header>
+
+    <div class="reviewgrid">
+
+      <figure class="review review--feature">
+        <p class="review__rating"><svg class="stars" viewBox="0 0 116 20" role="img" aria-label="Rated 5 out of 5"><use href="#i-star" width="20" height="20"/><use href="#i-star" x="24" width="20" height="20"/><use href="#i-star" x="48" width="20" height="20"/><use href="#i-star" x="72" width="20" height="20"/><use href="#i-star" x="96" width="20" height="20"/></svg></p>
+        <blockquote class="review__quote">
+          <p>Nick has installed multiple floors in my house and I couldn't recommend him
+          any higher. Highest quality craftsmanship, clean and organized work site, fair
+          pricing, and an absolute pleasure to have in the house during the day. If you
+          need flooring installed - he's the guy to call.</p>
+        </blockquote>
+        <figcaption class="review__by">
+          <span class="review__avatar" aria-hidden="true">J</span>
+          <span class="review__who">
+            <strong>Jeremy Arendt</strong>
+            <span class="review__meta">Local Guide &middot; 26 reviews</span>
+          </span>
+        </figcaption>
+      </figure>
+
+      <figure class="review">
+        <p class="review__rating"><svg class="stars" viewBox="0 0 116 20" role="img" aria-label="Rated 5 out of 5"><use href="#i-star" width="20" height="20"/><use href="#i-star" x="24" width="20" height="20"/><use href="#i-star" x="48" width="20" height="20"/><use href="#i-star" x="72" width="20" height="20"/><use href="#i-star" x="96" width="20" height="20"/></svg></p>
+        <blockquote class="review__quote">
+          <p>Did a fantastic job replacing flooring in my kitchen. Very professional and
+          would absolutely use again in the future!</p>
+        </blockquote>
+        <figcaption class="review__by">
+          <span class="review__avatar" aria-hidden="true">B</span>
+          <span class="review__who">
+            <strong>Bridget Kampman</strong>
+            <span class="review__meta">Google review</span>
+          </span>
+        </figcaption>
+      </figure>
+
+      <figure class="review">
+        <p class="review__rating"><svg class="stars" viewBox="0 0 116 20" role="img" aria-label="Rated 5 out of 5"><use href="#i-star" width="20" height="20"/><use href="#i-star" x="24" width="20" height="20"/><use href="#i-star" x="48" width="20" height="20"/><use href="#i-star" x="72" width="20" height="20"/><use href="#i-star" x="96" width="20" height="20"/></svg></p>
+        <blockquote class="review__quote">
+          <p>We were needing flooring asap as we bought our first house! Nick came out gave
+          us a quote and we went got the flooring and was very professional and
+          accommodating! We had new flooring in no time and have had so many complements
+          on it! Also installed our trim and got it done quickly and affordable!</p>
+        </blockquote>
+        <figcaption class="review__by">
+          <span class="review__avatar" aria-hidden="true">D</span>
+          <span class="review__who">
+            <strong>Diane Elizabeth</strong>
+            <span class="review__meta">8 reviews</span>
+          </span>
+        </figcaption>
+      </figure>
+
+      <figure class="review">
+        <p class="review__rating"><svg class="stars" viewBox="0 0 116 20" role="img" aria-label="Rated 5 out of 5"><use href="#i-star" width="20" height="20"/><use href="#i-star" x="24" width="20" height="20"/><use href="#i-star" x="48" width="20" height="20"/><use href="#i-star" x="72" width="20" height="20"/><use href="#i-star" x="96" width="20" height="20"/></svg></p>
+        <blockquote class="review__quote">
+          <p>We are very happy with the work Spec Floors did for us. They helped with the
+          selection of flooring options in our basement, then continued with the removal
+          of carpeting and installation of engineered flooring over a heated concrete
+          slab. We will be using them again on a future project.</p>
+        </blockquote>
+        <figcaption class="review__by">
+          <span class="review__avatar" aria-hidden="true">J</span>
+          <span class="review__who">
+            <strong>J W</strong>
+            <span class="review__meta">5 reviews</span>
+          </span>
+        </figcaption>
+      </figure>
+
+      <figure class="review">
+        <p class="review__rating"><svg class="stars" viewBox="0 0 116 20" role="img" aria-label="Rated 5 out of 5"><use href="#i-star" width="20" height="20"/><use href="#i-star" x="24" width="20" height="20"/><use href="#i-star" x="48" width="20" height="20"/><use href="#i-star" x="72" width="20" height="20"/><use href="#i-star" x="96" width="20" height="20"/></svg></p>
+        <blockquote class="review__quote">
+          <p>High quality work, great pricing, on time and easy to work with. Overall a
+          great experience!</p>
+        </blockquote>
+        <figcaption class="review__by">
+          <span class="review__avatar" aria-hidden="true">S</span>
+          <span class="review__who">
+            <strong>Steve Doherty</strong>
+            <span class="review__meta">Google review</span>
+          </span>
+        </figcaption>
+      </figure>
+
+    </div>
+
+    <div class="reviews__more">
+      <a class="btn btn--outline btn--xl"
+         href="https://www.google.com/maps/place/?q=place_id:ChIJO4Z94ctuo0MRbY37IiBksy0"
+         target="_blank" rel="noopener" data-track="reviews-google">
+        <svg class="ico" aria-hidden="true" viewBox="0 0 48 48">
+          <path fill="#4285F4" d="M45.1 24.5c0-1.6-.1-3.2-.4-4.7H24v8.9h11.8a10.1 10.1 0 0 1-4.4 6.6v5.5h7.1c4.1-3.8 6.6-9.4 6.6-16.3z"/>
+          <path fill="#34A853" d="M24 46c5.9 0 10.9-2 14.5-5.3l-7.1-5.5c-2 1.3-4.5 2.1-7.4 2.1-5.7 0-10.5-3.8-12.2-9H4.5v5.7A22 22 0 0 0 24 46z"/>
+          <path fill="#FBBC05" d="M11.8 28.3a13.2 13.2 0 0 1 0-8.6v-5.7H4.5a22 22 0 0 0 0 20l7.3-5.7z"/>
+          <path fill="#EA4335" d="M24 10.3c3.2 0 6.1 1.1 8.4 3.3l6.3-6.3C34.9 3.8 29.9 1.7 24 1.7A22 22 0 0 0 4.5 14l7.3 5.7c1.7-5.2 6.5-9.4 12.2-9.4z"/>
+        </svg>
+        Read All Reviews on Google
+        <svg class="ico ico--right" aria-hidden="true" viewBox="0 0 24 24"><path d="M14 3v2h3.6l-9.8 9.8 1.4 1.4L19 6.4V10h2V3h-7zM5 5h5V3H3v18h18v-7h-2v5H5V5z"/></svg>
+      </a>
+    </div>
+  </div>
+</section>
+
 <!-- ============ PROCESS ============ -->
 <section class="section section--navy process">
   <div class="wrap">
@@ -633,6 +764,38 @@
   </div>
 </section>
 
+<!-- ============ GOOGLE REVIEW ASK ============ -->
+<!-- The href is the canonical Google "write a review" deep link for the
+     Spec Floors listing. The placeid is derived from the listing's map
+     feature id (0x43a36ecbe17d863b:0x2db3642022fb8d6d); it never changes
+     unless the Business Profile is deleted and recreated. -->
+<section class="reviewask" id="leave-review">
+  <div class="wrap reviewask__inner">
+    <span class="reviewask__mark" aria-hidden="true">
+      <svg viewBox="0 0 48 48">
+        <path fill="#4285F4" d="M45.1 24.5c0-1.6-.1-3.2-.4-4.7H24v8.9h11.8a10.1 10.1 0 0 1-4.4 6.6v5.5h7.1c4.1-3.8 6.6-9.4 6.6-16.3z"/>
+        <path fill="#34A853" d="M24 46c5.9 0 10.9-2 14.5-5.3l-7.1-5.5c-2 1.3-4.5 2.1-7.4 2.1-5.7 0-10.5-3.8-12.2-9H4.5v5.7A22 22 0 0 0 24 46z"/>
+        <path fill="#FBBC05" d="M11.8 28.3a13.2 13.2 0 0 1 0-8.6v-5.7H4.5a22 22 0 0 0 0 20l7.3-5.7z"/>
+        <path fill="#EA4335" d="M24 10.3c3.2 0 6.1 1.1 8.4 3.3l6.3-6.3C34.9 3.8 29.9 1.7 24 1.7A22 22 0 0 0 4.5 14l7.3 5.7c1.7-5.2 6.5-9.4 12.2-9.4z"/>
+      </svg>
+    </span>
+
+    <div class="reviewask__copy">
+      <p class="reviewask__stars"><span aria-hidden="true">&#9733;&#9733;&#9733;&#9733;&#9733;</span> <span>Already had Nick out?</span></p>
+      <h2>Leave us a Google review.</h2>
+      <p>If you're happy with your floor, two minutes and a few stars help the
+         next homeowner find us.</p>
+    </div>
+
+    <a class="btn btn--navy btn--xl reviewask__btn"
+       href="https://search.google.com/local/writereview?placeid=ChIJO4Z94ctuo0MRbY37IiBksy0"
+       target="_blank" rel="noopener" data-track="review-band">
+      <svg class="ico" aria-hidden="true" viewBox="0 0 24 24"><path d="m12 17.3-6.2 3.7 1.7-7L2 9.2l7.1-.6L12 2l2.9 6.6 7.1.6-5.5 4.8 1.7 7z"/></svg>
+      Write a Google Review
+    </a>
+  </div>
+</section>
+
 </main>
 
 <!-- ============ FOOTER ============ -->
@@ -666,8 +829,10 @@
       <ul>
         <li><a href="#work">Our Work</a></li>
         <li><a href="#about">About Nick</a></li>
+        <li><a href="#reviews">Reviews</a></li>
         <li><a href="#area">Service Area</a></li>
         <li><a href="#estimate">Free Estimate</a></li>
+        <li><a href="https://search.google.com/local/writereview?placeid=ChIJO4Z94ctuo0MRbY37IiBksy0" target="_blank" rel="noopener" data-track="review-footer">Leave a Google Review</a></li>
       </ul>
     </div>
 
